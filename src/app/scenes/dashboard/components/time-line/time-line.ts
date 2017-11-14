@@ -1,4 +1,4 @@
 export class TimeLine {
-  dtInicio: string;
-  dtFim: string;
+  public dtInicio: string;
+  public dtFim: string;
 }

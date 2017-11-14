@@ -1,9 +1,15 @@
 <div class="time-line-row">
-    <label for="timeStart">Horário de inívio</label>
-    <input type="text" id="timeStart" ([ngModel])="timeLine.dtInicio">
+    <span>
+      <label for="timeStart">Horário de início</label>
+      <input type="text" id="timeStart" [(ngModel)]="timeLine.dtInicio">
+    </span>
 
-    <label for="timeEnd">Horário de Fim</label>
-    <input type="text" id="timeEnd" ([ngModel])="timeLine.dtFim">
+    <span>
+      <label for="timeEnd">Horário de Fim</label>
+      <input type="text" id="timeEnd" [(ngModel)]="timeLine.dtFim">
+    </span>
 
-    <button class="rounded-button" (click)="handleConfirmationButton()">OK</button>
+    <span>
+      <button class="rounded-button" (click)="handleConfirmationButton()">OK</button>
+    </span>
   </div>

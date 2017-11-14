@@ -1,4 +1,7 @@
 <div>
-  <app-time-line></app-time-line>
-
+  <!-- multiply for more elements -->
+  <app-time-line (onAccept)="handleTest($event)"></app-time-line>
+  <!-- Add button to multiply app-time-line -->
+  <app-time-result [tempo]="totalHoras"> </app-time-result>
+  <!-- add button to compute all the timers -->
 </div>
