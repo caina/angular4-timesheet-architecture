@@ -8,12 +8,14 @@ import { DashboardComponent } from './dashboard.component'
 import { TimeResultComponent } from './components/time-result/time-result.component';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
     TimeLineComponent,
     DashboardComponent,
     TimeResultComponent,
+    HistoryComponent,
   ],
   imports: [
     HttpModule,
