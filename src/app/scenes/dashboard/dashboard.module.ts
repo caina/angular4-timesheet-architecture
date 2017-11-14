@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {DashboardComponent} from './dashboard.component'
+import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
+
 import { TimeLineComponent } from './components/time-line/time-line.component';
-import { DashboardRoutingModule } from './dashboard-routing.module';
+import { DashboardComponent } from './dashboard.component'
 import { TimeResultComponent } from './components/time-result/time-result.component';
 
+import { DashboardRoutingModule } from './dashboard-routing.module';
+
 @NgModule({
-  imports: [
-    DashboardRoutingModule,
-    FormsModule,
-  ],
   declarations: [
     TimeLineComponent,
     DashboardComponent,
     TimeResultComponent,
+  ],
+  imports: [
+    HttpModule,
+    FormsModule,
+    CommonModule,
+    DashboardRoutingModule,
   ]
 })
 export class DashboardModule { }
