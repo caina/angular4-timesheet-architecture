@@ -10,7 +10,7 @@
         <app-big-button (onClick)="summarize()">Summarize</app-big-button>
       </span>
 
-      <app-time-line *ngFor="let timeLine of timeLines" (onAccept)="handleTimeCalculation($event)"></app-time-line>
+	  <div #timeLines></div>
 
     </app-card>
   </div>

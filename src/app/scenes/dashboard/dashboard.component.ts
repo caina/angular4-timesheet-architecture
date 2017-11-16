@@ -1,36 +1,61 @@
-import { Component, QueryList, ContentChildren } from '@angular/core';
+import {
+	Component,
+	QueryList,
+	ContentChildren,
+	ViewChild,
+	ViewContainerRef,
+	ComponentFactoryResolver,
+	AfterContentInit,
+	ComponentRef
+} from '@angular/core';
 import { TimeLine } from './components/time-line/time-line';
 import { TimeDifferenceService } from './time-difference.service';
 import { TimeLineComponent } from './components/time-line/time-line.component';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
-  providers: [TimeDifferenceService],
+	selector: 'app-dashboard',
+	templateUrl: './dashboard.component.html',
+	styleUrls: ['./dashboard.component.scss'],
+	providers: [TimeDifferenceService],
 })
-export class DashboardComponent {
+export class DashboardComponent implements AfterContentInit {
 
-  public totalHoras: number;
+	public timeLineRefs: ComponentRef<TimeLineComponent>[] = [];
 
-  public timeLines: TimeLine[] = [];
+	@ViewChild("timeLines", { read: ViewContainerRef }) timeLineContainer: ViewContainerRef;
 
-  constructor(public time: TimeDifferenceService) {
-    this.timeLines.push(new TimeLine());
-    this.timeLines.push(new TimeLine());
-   }
+	constructor(public time: TimeDifferenceService, private resolver: ComponentFactoryResolver) {}
 
-  public handleTimeCalculation(timeLine: TimeLine) {
-    if (timeLine.dtInicio && timeLine.dtFim) {
-      this.time.calculateDifference(timeLine.dtInicio, timeLine.dtFim);
-    }
-  }
+	ngAfterContentInit(): void {
+		this.addTimeLine();
+		this.addTimeLine();
+	}
 
-  public addTimeLine(): void {
-    this.timeLines.push(new TimeLine());
-  }
+	public handleTimeCalculation(timeLine: TimeLine) {
+		if (timeLine.dtInicio && timeLine.dtFim) {
+			this.time.calculateDifference(timeLine);
+		}
+	}
 
-  public summarize():void {
-    console.log(this.timeLines);
-  }
+	public addTimeLine(): void {
+		const timeLineRef = this.createTimeLine();
+		this.timeLineRefs.push(timeLineRef);
+	}
+	
+	private createTimeLine() {
+		const timeLineFactory = this.resolver.resolveComponentFactory(TimeLineComponent);
+		const timeLineRef = this.timeLineContainer.createComponent(timeLineFactory);
+		timeLineRef.instance.onAccept.subscribe((timeLine: TimeLine) => {
+			this.handleTimeCalculation(timeLine);
+		});
+		return timeLineRef;
+	}
+
+	public summarize(): void {
+		const timeLines = this.timeLineRefs
+		.map(timeLineRef => timeLineRef.instance)
+		.map(timeLine => timeLine.timeLine)
+
+		this.time.calculateDiferences(timeLines);
+	}
 }

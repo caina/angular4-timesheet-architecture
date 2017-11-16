@@ -17,6 +17,9 @@ import { AppModule } from '../../app.module';
     DashboardComponent,
     TimeResultComponent,
   ],
+  entryComponents:[
+	TimeLineComponent,
+  ],
   imports: [
     HttpModule,
     FormsModule,
