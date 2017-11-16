@@ -1,13 +1,30 @@
 :host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top:0;
+  right: 0;
 
   .card-component {
     background: #fff;
-    padding: 25px;
+    padding: 10px 25px 25px 25px;
     min-height: 50px;
     border-radius: 15px;
     max-width: 450px;
     min-width: 300px;
 
+    &__header {
+      display: flex;
+
+      h1 {
+        font-size: 12px;
+        margin: 0px;
+      }
+    }
   }
 
 }

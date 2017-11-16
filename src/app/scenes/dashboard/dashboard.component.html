@@ -2,7 +2,7 @@
   <div>
 
     <app-card>
-
+      <h1>Time-sheet</h1>
       <app-time-result [tempo]="time.timeDifference$ | async"> </app-time-result>
 
       <span>
@@ -10,7 +10,6 @@
         <app-big-button (onClick)="summarize()">Summarize</app-big-button>
       </span>
 
-      <!-- multiply for more elements -->
       <app-time-line *ngFor="let timeLine of timeLines" (onAccept)="handleTimeCalculation($event)"></app-time-line>
 
     </app-card>
