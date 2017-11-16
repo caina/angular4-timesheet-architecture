@@ -3,12 +3,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 15px;
 
     span {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      flex-basis: 45%;
+      flex-basis: 32%;
     }
 
     input {
@@ -16,7 +17,7 @@
     }
 
     app-button {
-      align-self: center;
+      align-self: flex-end;
     }
 
   }

@@ -9,7 +9,6 @@ import { TimeResultComponent } from './components/time-result/time-result.compon
 
 import {ComponentsModule} from './../../components/components.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { HistoryComponent } from './history/history.component';
 import { AppModule } from '../../app.module';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { AppModule } from '../../app.module';
     TimeLineComponent,
     DashboardComponent,
     TimeResultComponent,
-    HistoryComponent,
   ],
   imports: [
     HttpModule,

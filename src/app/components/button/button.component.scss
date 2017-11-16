@@ -1,0 +1,17 @@
+:host {
+
+  button {
+    border: none;
+    padding: 7px 12px;
+    border-radius: 15px;
+    background-color: #E3E5FD;
+    color: #8F97F8;
+    &:hover {
+      color: #fff;
+      cursor: pointer;
+    }
+    &:focus {
+      outline:0;
+    }
+  }
+}

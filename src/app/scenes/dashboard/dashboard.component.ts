@@ -18,7 +18,6 @@ export class DashboardComponent {
   constructor(public time: TimeDifferenceService) {
     this.timeLines.push(new TimeLine());
     this.timeLines.push(new TimeLine());
-    this.timeLines.push(new TimeLine());
    }
 
   public handleTimeCalculation(timeLine: TimeLine) {

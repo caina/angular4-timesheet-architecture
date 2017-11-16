@@ -1,14 +1,15 @@
-import { Component, Input, SimpleChanges, OnChanges } from "@angular/core";
+import { Component, Input, SimpleChanges, OnChanges, ChangeDetectionStrategy } from "@angular/core";
 import * as moment from 'moment';
 
 @Component({
   selector: 'app-time-result',
   template: `
   <div class="timer-result">
-    <h2>{{timeInHours}}H</h2>
-    <h3>{{totalTimeDiff}}</h3>
+    <h2><i class="fa fa-star" aria-hidden="true"></i> {{timeInHours}}H</h2>
+    <h3><i class="fa fa-clock-o" aria-hidden="true"></i> {{totalTimeDiff}}</h3>
   </div>`,
   styleUrls: ['./time-result.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TimeResultComponent implements OnChanges {
 

@@ -2,7 +2,13 @@ import { Component, Input, EventEmitter, Output  } from "@angular/core";
 
 @Component({
   selector: 'app-button',
-  template: `<button class='btn' (click)="onButtonClick()"><ng-content></ng-content></button>`
+  template: `
+  <span class='button-holder'>
+    <button class='btn' (click)="onButtonClick()">
+      <ng-content></ng-content>
+    </button>
+  </span>`,
+  styleUrls: ['./button.component.scss']
 })
 export class Button {
 
