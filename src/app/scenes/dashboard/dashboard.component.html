@@ -1,9 +1,18 @@
-<div>
-  <!-- multiply for more elements -->
-  <app-time-line (onAccept)="handleTest($event)"></app-time-line>
-  <!-- Add button to multiply app-time-line -->
-  <app-time-result [tempo]="time.timeDifference$ | async"> </app-time-result>
-  <!-- add button to compute all the timers -->
-</div>
+<div class="dashboard">
+  <div>
 
-<app-history [tempo]="time.timeDifference$ | async"></app-history>
+    <app-card>
+
+      <app-time-result [tempo]="time.timeDifference$ | async"> </app-time-result>
+
+      <span>
+        <app-big-button (onClick)="addTimeLine()">Add Time</app-big-button>
+        <app-big-button (onClick)="summarize()">Summarize</app-big-button>
+      </span>
+
+      <!-- multiply for more elements -->
+      <app-time-line *ngFor="let timeLine of timeLines" (onAccept)="handleTimeCalculation($event)"></app-time-line>
+
+    </app-card>
+  </div>
+</div>

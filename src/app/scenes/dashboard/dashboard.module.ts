@@ -7,8 +7,10 @@ import { TimeLineComponent } from './components/time-line/time-line.component';
 import { DashboardComponent } from './dashboard.component'
 import { TimeResultComponent } from './components/time-result/time-result.component';
 
+import {ComponentsModule} from './../../components/components.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HistoryComponent } from './history/history.component';
+import { AppModule } from '../../app.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { HistoryComponent } from './history/history.component';
     FormsModule,
     CommonModule,
     DashboardRoutingModule,
+    ComponentsModule,
   ]
 })
 export class DashboardModule { }

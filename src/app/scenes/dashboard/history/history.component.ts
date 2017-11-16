@@ -12,6 +12,7 @@ export class HistoryComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
+    // armazenar no local storage
     console.log(changes);
   }
 }

@@ -8,25 +8,16 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      flex-basis: 45%;
     }
 
-    button {
-      background: #0f0c29;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(to top, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to top, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-      border: none;
-      color: #fff;
-      padding:8px 15px;
-      border-radius: 25px;
-      transition: background-color 2s ease;
-
-      &:hover {
-        cursor: pointer;
-        background: #0f0c29;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      }
+    input {
+      max-width: 80px;
     }
+
+    app-button {
+      align-self: center;
+    }
+
   }
 }
