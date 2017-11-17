@@ -30,7 +30,7 @@ export class DashboardComponent implements AfterContentInit {
     this.addTimeLine();
   }
 
-  public handleTimeCalculation(timeLine: TimeLine) {
+  public handleTimeCalculation(timeLine: TimeLine): void {
     if (timeLine.dtInicio && timeLine.dtFim) {
       this.time.calculateDifference(timeLine);
     }
@@ -41,7 +41,7 @@ export class DashboardComponent implements AfterContentInit {
     this.timeLineRefs.push(timeLineRef);
   }
 
-  private createTimeLine() {
+  private createTimeLine(): ComponentRef<TimeLineComponent> {
     const timeLineFactory = this.resolver.resolveComponentFactory(TimeLineComponent);
     const timeLineRef = this.timeLineContainer.createComponent(timeLineFactory);
     timeLineRef.instance.onAccept.subscribe((timeLine: TimeLine) => {
