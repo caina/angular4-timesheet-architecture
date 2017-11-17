@@ -11,12 +11,15 @@ import {
 import { TimeLine } from '../components/time-line/time-line';
 import { TimeDifferenceService } from './time-difference.service';
 import { TimeLineComponent } from '../components/time-line/time-line.component';
+import { fadeInAnimation } from '../../../_animations/fade-in.animation';
 
 @Component({
   selector: 'app-time-sheet',
   templateUrl: './time-sheet.component.html',
   styleUrls: ['./time-sheet.component.scss'],
   providers: [TimeDifferenceService],
+  animations: [fadeInAnimation],
+  host: { '[@fadeInAnimation]': '' },
 })
 export class TimeSheetComponent implements AfterContentInit {
 
