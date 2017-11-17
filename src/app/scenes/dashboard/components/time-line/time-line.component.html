@@ -1,11 +1,11 @@
-<div class="time-line-row">
+<div class="time-line-row" [class.active]="used">
     <span>
-      <label for="timeStart">Start</label>
+      <label for="timeStart"><i class="fa fa-flag" aria-hidden="true"></i></label>
       <input type="text" placeholder="00:00" id="timeStart" [(ngModel)]="timeLine.dtInicio">
     </span>
 
     <span>
-      <label for="timeEnd">Finish</label>
+      <label for="timeEnd"><i class="fa fa-flag-checkered" aria-hidden="true"></i></label>
       <input type="text" placeholder="00:00" id="timeEnd" [(ngModel)]="timeLine.dtFim">
     </span>
 

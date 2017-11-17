@@ -1,24 +1,47 @@
 :host {
   .time-line-row {
+    border: 2px solid #F5F6F7;
+    border-radius: 5px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 15px;
+    transition: all .1s ease-in-out;
+    padding: 5px;
+    margin-bottom: 10px;
 
     span {
       display: flex;
-      flex-direction: column;
       justify-content: flex-end;
-      flex-basis: 32%;
-    }
+      width: 100%;
+      color: #8F97F8;
 
-    input {
-      max-width: 80px;
+      input {
+        width: 100%;
+        border: none;
+        padding-left: 6px;
+        &:focus {
+          outline:0;
+        }
+      }
+
+      label {
+        display: flex;
+        i {
+          align-self: center;
+        }
+      }
     }
 
     app-button {
-      align-self: flex-end;
+      flex-shrink: 0;
     }
+  }
 
+  .active {
+    background-color: #E2E4FC;
+    border-color: #E2E4FC;
+    input {
+      color: #8F97F8;
+      background-color: #E2E4FC;
+    }
   }
 }
