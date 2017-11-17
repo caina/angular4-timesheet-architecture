@@ -24,7 +24,21 @@
         font-size: 12px;
         margin: 0px;
       }
-    }
+	}
+	
+	&__footer {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 35px;
+		a {
+			font-size: 24px;
+			margin-left: 10px;
+			color: #8F97F8;
+			&:hover {
+				color: rgb(101, 113, 247);
+			}
+		}
+	}
   }
 
 }
