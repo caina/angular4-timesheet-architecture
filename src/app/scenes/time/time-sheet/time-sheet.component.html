@@ -1,0 +1,12 @@
+<app-card>
+  <h1>Time-sheet</h1>
+  <app-time-result [tempo]="time.timeDifference$ | async"> </app-time-result>
+
+  <span>
+    <app-big-button (onClick)="addTimeLine()">Add Time</app-big-button>
+    <app-big-button (onClick)="summarize()">Summarize</app-big-button>
+  </span>
+
+  <div #timeLines></div>
+
+</app-card>

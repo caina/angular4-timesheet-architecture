@@ -1,10 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { TimeLine } from './time-line'
+import { TimeLine } from './time-line';
+import { fadeInAnimation } from '../../../../_animations/fade-in.animation';
 
 @Component({
   selector: 'app-time-line',
   templateUrl: './time-line.component.html',
   styleUrls: ['./time-line.component.scss'],
+  animations: [fadeInAnimation],
+  host: { '[@fadeInAnimation]': '' },
   providers: [TimeLine]
 })
 export class TimeLineComponent {

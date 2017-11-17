@@ -1,7 +1,7 @@
 import * as moment from 'moment';
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { TimeLine } from './components/time-line/time-line';
+import { TimeLine } from '../components/time-line/time-line';
 
 @Injectable()
 export class TimeDifferenceService {

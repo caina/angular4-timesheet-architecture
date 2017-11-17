@@ -4,18 +4,20 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 
 import { TimeLineComponent } from './components/time-line/time-line.component';
-import { DashboardComponent } from './dashboard.component'
 import { TimeResultComponent } from './components/time-result/time-result.component';
 
 import {ComponentsModule} from './../../components/components.module';
-import { DashboardRoutingModule } from './dashboard-routing.module';
+import { TimeRoutingModule } from './time-routing.module';
 import { AppModule } from '../../app.module';
+import { TimeSheetComponent } from './time-sheet/time-sheet.component';
+import { TimeHistoryComponent } from './time-history/time-history.component';
 
 @NgModule({
   declarations: [
     TimeLineComponent,
-    DashboardComponent,
     TimeResultComponent,
+    TimeSheetComponent,
+    TimeHistoryComponent
   ],
   entryComponents:[
 	TimeLineComponent,
@@ -24,8 +26,8 @@ import { AppModule } from '../../app.module';
     HttpModule,
     FormsModule,
     CommonModule,
-    DashboardRoutingModule,
+    TimeRoutingModule,
     ComponentsModule,
   ]
 })
-export class DashboardModule { }
+export class TimeModule { }

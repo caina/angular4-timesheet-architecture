@@ -1,0 +1,14 @@
+:host {
+
+    span {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0px;
+
+      app-big-button {
+        flex-basis: 45%;
+        min-height: 50px;
+      }
+
+    }
+  }

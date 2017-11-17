@@ -8,17 +8,18 @@ import {
   AfterContentInit,
   ComponentRef
 } from '@angular/core';
-import { TimeLine } from './components/time-line/time-line';
+import { TimeLine } from '../components/time-line/time-line';
 import { TimeDifferenceService } from './time-difference.service';
-import { TimeLineComponent } from './components/time-line/time-line.component';
+import { TimeLineComponent } from '../components/time-line/time-line.component';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: 'app-time-sheet',
+  templateUrl: './time-sheet.component.html',
+  styleUrls: ['./time-sheet.component.scss'],
   providers: [TimeDifferenceService],
 })
-export class DashboardComponent implements AfterContentInit {
+export class TimeSheetComponent implements AfterContentInit {
+
 
   public timeLineRefs: ComponentRef<TimeLineComponent>[] = [];
   @ViewChild("timeLines", { read: ViewContainerRef }) timeLineContainer: ViewContainerRef;
@@ -57,4 +58,5 @@ export class DashboardComponent implements AfterContentInit {
 
     this.time.calculateDiferences(timeLines);
   }
+
 }
