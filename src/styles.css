@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 body {
-  font-family: 'Roboto', sans-serif;
-  background: #70B6B4;  /* fallback for old browsers */
-
+  font-family: 'Barlow Condensed', sans-serif;
+  background: #F5F6F7;
   color: #403F3F;
 }

@@ -14,8 +14,8 @@
     padding: 10px 25px 25px 25px;
     min-height: 50px;
     border-radius: 15px;
-    max-width: 450px;
-    min-width: 300px;
+    max-width: 350px;
+    min-width: 350px;
 
     &__header {
       display: flex;
@@ -25,7 +25,7 @@
         margin: 0px;
       }
 	}
-	
+
 	&__footer {
 		display: flex;
 		justify-content: flex-end;

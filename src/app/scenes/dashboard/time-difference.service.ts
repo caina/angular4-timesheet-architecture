@@ -10,7 +10,9 @@ export class TimeDifferenceService {
 	public timeDifference$ = this.timeDifferenceSource.asObservable();
 
 	calculateDiferences(timeLines: TimeLine[]) {
-		const total = timeLines
+    console.log(timeLines)
+    const total = timeLines
+      .filter(timeLine => timeLine.dtInicio && timeLine.dtFim)
 			.map(time => this.duration(time.dtInicio, time.dtFim))
 			.reduce((prev, next) => {
 				return prev + next;
@@ -23,11 +25,11 @@ export class TimeDifferenceService {
 		this.timeDifferenceSource.next(durationTime);
 	}
 
-	// Check if end date is less than start date, if so, end date is tomorrow
 	duration(startTime: string, endTime: string) {
 		const start = moment(startTime, 'HHmmss');
-		const end = moment(endTime, 'HHmmss');
+    const end = moment(endTime, 'HHmmss');
+    const daysAhead = start > end ? 1 : 0;
 
-		return moment.duration(end.diff(start)).asHours();
+		return moment.duration(end.add(daysAhead, "day").diff(start)).asHours();
 	}
 }
