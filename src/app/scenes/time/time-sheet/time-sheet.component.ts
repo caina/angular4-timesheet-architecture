@@ -9,20 +9,18 @@ import {
   ComponentRef
 } from '@angular/core';
 import { TimeLine } from '../components/time-line/time-line';
-import { TimeDifferenceService } from './time-difference.service';
 import { TimeLineComponent } from '../components/time-line/time-line.component';
 import { fadeInAnimation } from '../../../_animations/fade-in.animation';
+import { TimeDifferenceService } from './time-difference.service';
 
 @Component({
   selector: 'app-time-sheet',
   templateUrl: './time-sheet.component.html',
   styleUrls: ['./time-sheet.component.scss'],
-  providers: [TimeDifferenceService],
   animations: [fadeInAnimation],
   host: { '[@fadeInAnimation]': '' },
 })
 export class TimeSheetComponent implements AfterContentInit {
-
 
   public timeLineRefs: ComponentRef<TimeLineComponent>[] = [];
   @ViewChild("timeLines", { read: ViewContainerRef }) timeLineContainer: ViewContainerRef;
@@ -41,16 +39,17 @@ export class TimeSheetComponent implements AfterContentInit {
   }
 
   public addTimeLine(): void {
-    const timeLineRef = this.createTimeLine();
-    this.timeLineRefs.push(timeLineRef);
+    this.timeLineRefs.push(this.createTimeLine());
   }
 
   private createTimeLine(): ComponentRef<TimeLineComponent> {
     const timeLineFactory = this.resolver.resolveComponentFactory(TimeLineComponent);
     const timeLineRef = this.timeLineContainer.createComponent(timeLineFactory);
+
     timeLineRef.instance.onAccept.subscribe((timeLine: TimeLine) => {
       this.handleTimeCalculation(timeLine);
     });
+
     return timeLineRef;
   }
 
@@ -61,5 +60,4 @@ export class TimeSheetComponent implements AfterContentInit {
 
     this.time.calculateDiferences(timeLines);
   }
-
 }

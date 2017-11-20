@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { TimeLineComponent } from './components/time-line/time-line.component';
 import { TimeResultComponent } from './components/time-result/time-result.component';
 
-import {ComponentsModule} from './../../components/components.module';
+import { ComponentsModule } from './../../components/components.module';
 import { TimeRoutingModule } from './time-routing.module';
 import { AppModule } from '../../app.module';
 import { TimeSheetComponent } from './time-sheet/time-sheet.component';
 import { TimeHistoryComponent } from './time-history/time-history.component';
+import { TimeDifferenceService } from './time-sheet/time-difference.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,10 @@ import { TimeHistoryComponent } from './time-history/time-history.component';
     TimeSheetComponent,
     TimeHistoryComponent
   ],
-  entryComponents:[
-	TimeLineComponent,
+  entryComponents: [
+    TimeLineComponent,
   ],
+  providers: [TimeDifferenceService],
   imports: [
     HttpModule,
     FormsModule,

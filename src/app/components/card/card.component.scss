@@ -1,13 +1,7 @@
 :host {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 100%;
-  min-height: 100%;
-  position: absolute;
-  top:0;
-  right: 0;
 
   .card-component {
     background: #fff;
@@ -17,28 +11,24 @@
     max-width: 350px;
     min-width: 350px;
 
-    &__header {
-      display: flex;
-
-      h1 {
-        font-size: 12px;
-        margin: 0px;
-      }
-	}
-
-	&__footer {
-		display: flex;
-		justify-content: flex-end;
-		margin-top: 35px;
-		a {
-			font-size: 24px;
-			margin-left: 10px;
-			color: #8F97F8;
-			&:hover {
-				color: rgb(101, 113, 247);
-			}
-		}
-	}
+   &__head  span{
+    display: flex;
+    justify-content: space-between;
   }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 35px;
+    a {
+      font-size: 24px;
+      margin-left: 10px;
+      color: #8F97F8;
+      &:hover {
+        color: rgb(101, 113, 247);
+      }
+    }
+  }
+}
 
 }

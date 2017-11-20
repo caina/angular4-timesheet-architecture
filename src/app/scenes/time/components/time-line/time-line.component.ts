@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { TimeLine } from './time-line';
 
 @Component({
@@ -10,7 +10,8 @@ import { TimeLine } from './time-line';
 export class TimeLineComponent {
 
   @Output() onAccept: EventEmitter<TimeLine> = new EventEmitter<TimeLine>();
-  public timeLine: TimeLine = new TimeLine();
+  @Input() public timeLine: TimeLine = new TimeLine();
+  @Input() public showTotal: boolean = false;
   public used: boolean = false;
 
   constructor() { }

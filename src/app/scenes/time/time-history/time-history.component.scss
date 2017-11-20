@@ -1,5 +1,4 @@
 :host {
-
   h1 {
     font-size: 16px;
   }
@@ -9,18 +8,9 @@
     text-decoration: none;
   }
 
-  .card-list {
-    margin-top: 20px;
-  }
-
   span {
     display: flex;
     justify-content: space-between;
     margin: 10px 0px;
-
-    app-big-button {
-      flex-basis: 45%;
-      min-height: 50px;
-    }
   }
 }

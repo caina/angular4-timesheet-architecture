@@ -1,5 +1,9 @@
 <app-card>
-  <h1>Time-sheet</h1>
+  <span header>
+    <h1>Time-Sheet</h1>
+    <a routerLink="history"><i class="fa fa-history" aria-hidden="true"></i> History</a>
+  </span>
+
   <app-time-result [tempo]="time.timeDifference$ | async"> </app-time-result>
 
   <span>
@@ -7,6 +11,5 @@
     <app-big-button (onClick)="summarize()">Summarize</app-big-button>
   </span>
 
-  <div #timeLines></div>
-
+  <div class="card-list" #timeLines></div>
 </app-card>

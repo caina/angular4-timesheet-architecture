@@ -1,3 +1,17 @@
-<p>
-  time-history works!
-</p>
+<app-card>
+  <span header>
+    <a routerLink="">Time Sheet</a>
+    <h1>History</h1>
+  </span>
+
+  <app-time-line
+    *ngFor="let timeLine of time.history.reverse()"
+    [timeLine]="timeLine"
+    showTotal="true">
+  </app-time-line>
+
+  <div *ngIf="time.history.length === 0">
+    No history avaliable
+  </div>
+
+</app-card>
