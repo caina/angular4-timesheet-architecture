@@ -10,3 +10,8 @@ body {
   background: #F5F6F7;
   color: #403F3F;
 }
+
+nav {
+  position: absolute;
+  z-index: 1;
+}

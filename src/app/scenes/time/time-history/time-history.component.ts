@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TimeDifferenceService } from '../time-sheet/time-difference.service';
 
 @Component({
@@ -6,12 +6,8 @@ import { TimeDifferenceService } from '../time-sheet/time-difference.service';
   templateUrl: './time-history.component.html',
   styleUrls: ['./time-history.component.scss']
 })
-export class TimeHistoryComponent implements OnInit {
+export class TimeHistoryComponent {
 
   constructor(public time: TimeDifferenceService) { }
-
-  ngOnInit() {
-    console.log(this.time.history);
-  }
 
 }
