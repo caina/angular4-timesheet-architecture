@@ -1,6 +1,16 @@
 :host {
-  .timer-result {
 
+  h2 {
+    font-size: 31px;
+    margin: 5px 0px;
+  }
+
+  h3 {
+    font-size: 21px;
+    margin-top: 15px;
+  }
+
+  .timer-result {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 25px;
