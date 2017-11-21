@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component';
 
+// import { StoreModule } from '@ngrx/store';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +17,9 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpModule,
+    // StoreModule.provideStore({
+    //   //place for future reducers
+    // }),
   ],
   providers: [],
   bootstrap: [AppComponent]
