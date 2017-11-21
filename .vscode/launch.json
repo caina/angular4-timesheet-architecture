@@ -1,27 +1,3 @@
-// {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-  //   "version": "0.2.0",
-  //   "configurations": [
-  //     {
-  //       "name": "Run jasmine",
-  //       "type": "chrome",
-  //       "request": "launch",
-  //       "url": "http://localhost:9876/debug.html",
-  //       "sourceMaps": true,
-  //       "webRoot": "${workspaceRoot}/src",
-  //       "userDataDir": "./out/chrome",
-  //       "runtimeExecutable": "/usr/bin/google-chrome-stable",
-  //       "skipFiles": [
-  //         "node_modules/**/*"
-  //       ],
-  //       "sourceMapPathOverrides": {
-  //         "webpack:///./*": "${workspaceRoot}/*"
-  //       }
-  //     }
-  //   ]
-  // }
   {
     "version": "0.2.0",
     "configurations": [
