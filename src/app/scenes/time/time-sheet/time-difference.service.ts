@@ -16,7 +16,7 @@ export class TimeDifferenceService {
       .map(time => this.duration(time.dtInicio, time.dtFim))
       .reduce((prev, next) => {
         return prev + next;
-      });
+      }, 0);
     this.timeDifferenceSource.next(total);
   }
 

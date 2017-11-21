@@ -8,13 +8,41 @@ describe('Time Difference service', () => {
 
   beforeEach(() => { service = new TimeDifferenceService() });
 
-  it('should mock', () => {
-    timeDifference$ = spyOn(service, 'timeDifference$');
+  it('Should emit event with time difference', () => {
+    service.calculateDifference(new TimeLine('1', '3'));
 
-    timeLine.dtInicio = '1';
-    timeLine.dtFim = '3';
+    service.timeDifference$.subscribe(diferenceResult => {
+      expect(diferenceResult).toBe(2);
+    });
+  });
 
-    service.calculateDifference(timeLine);
+  it('Should calculate empty time difference array', () => {
+    service.calculateDiferences([]);
+    service.timeDifference$.subscribe(total => {
+      expect(total).toBe(0);
+    });
+  });
+
+  it('Should calculate total difference array', ()=> {
+    service.calculateDiferences([
+      new TimeLine('1', '2'),
+      new TimeLine('2', '3'),
+    ]);
+
+    service.timeDifference$.subscribe(total => {
+      expect(total).toBe(2);
+    });
+  })
+
+  it('Should calculate total in array with not all elements populated', ()=> {
+    service.calculateDiferences([
+      new TimeLine('1'),
+      new TimeLine('2', '3'),
+    ]);
+
+    service.timeDifference$.subscribe(total => {
+      expect(total).toBe(1);
+    });
   });
 
   it('Should return a simple duration', () => {
@@ -28,11 +56,7 @@ describe('Time Difference service', () => {
   });
 
   it('Should add time to the history', () => {
-    timeLine.dtInicio = '1';
-    timeLine.dtFim = '3';
-
-    service.calculateDifference(timeLine);
-
+    service.calculateDifference(new TimeLine('1', '3'));
     expect(service.history.length).toBe(1);
-  })
+  });
 });
