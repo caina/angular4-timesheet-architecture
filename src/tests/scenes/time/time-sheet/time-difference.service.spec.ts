@@ -1,6 +1,13 @@
 import { TimeDifferenceService } from '../../../../app/scenes/time/time-sheet/time-difference.service';
 import { TimeLine } from '../../../../app/scenes/time/components/time-line/time-line';
 
+function createTimeLine(dtInicio: string, dtFim?:string) {
+  const timeLine:TimeLine = new TimeLine();
+  timeLine.dtInicio = dtInicio;
+  timeLine.dtFim = dtFim || '';
+  return timeLine;
+}
+
 describe('Time Difference service', () => {
   let service: TimeDifferenceService;
   let timeLine: TimeLine = new TimeLine();
@@ -9,7 +16,7 @@ describe('Time Difference service', () => {
   beforeEach(() => { service = new TimeDifferenceService() });
 
   it('Should emit event with time difference', () => {
-    service.calculateDifference(new TimeLine('1', '3'));
+    service.calculateDifference(createTimeLine('1', '3'));
 
     service.timeDifference$.subscribe(diferenceResult => {
       expect(diferenceResult).toBe(2);
@@ -25,8 +32,8 @@ describe('Time Difference service', () => {
 
   it('Should calculate total difference array', ()=> {
     service.calculateDiferences([
-      new TimeLine('1', '2'),
-      new TimeLine('2', '3'),
+      createTimeLine('1', '2'),
+      createTimeLine('2', '3'),
     ]);
 
     service.timeDifference$.subscribe(total => {
@@ -36,8 +43,8 @@ describe('Time Difference service', () => {
 
   it('Should calculate total in array with not all elements populated', ()=> {
     service.calculateDiferences([
-      new TimeLine('1'),
-      new TimeLine('2', '3'),
+      createTimeLine('1'),
+      createTimeLine('2', '3'),
     ]);
 
     service.timeDifference$.subscribe(total => {
@@ -56,7 +63,7 @@ describe('Time Difference service', () => {
   });
 
   it('Should add time to the history', () => {
-    service.calculateDifference(new TimeLine('1', '3'));
+    service.calculateDifference(createTimeLine('1', '3'));
     expect(service.history.length).toBe(1);
   });
 });

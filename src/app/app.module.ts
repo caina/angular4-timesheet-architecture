@@ -6,7 +6,10 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component';
 
-// import { StoreModule } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers, metaReducers } from './reducers';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,9 +20,8 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpModule,
-    // StoreModule.provideStore({
-    //   //place for future reducers
-    // }),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]

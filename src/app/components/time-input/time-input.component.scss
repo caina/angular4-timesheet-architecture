@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  align-items: center;
+
+  span {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    color: #8F97F8;
+  }
+
+  label {
+    display: flex;
+    i {
+      align-self: center;
+    }
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    padding-left: 6px;
+    &:focus {
+      outline:0;
+    }
+  }
+}

@@ -8,40 +8,17 @@
     padding: 5px;
     margin-bottom: 10px;
 
-    span {
-      display: flex;
-      justify-content: flex-end;
-      width: 100%;
-      color: #8F97F8;
-
-      input {
-        width: 100%;
-        border: none;
-        padding-left: 6px;
-        &:focus {
-          outline:0;
-        }
-      }
-
-      label {
-        display: flex;
-        i {
-          align-self: center;
-        }
-      }
-    }
-
     app-button {
       flex-shrink: 0;
     }
   }
 
   .active {
-    background-color: #E2E4FC;
-    border-color: #E2E4FC;
-    input {
-      color: #8F97F8;
-      background-color: #E2E4FC;
-    }
+    // background-color: #E2E4FC;
+    // border-color: #E2E4FC;
+    // app-time-input input {
+    //   color: #8F97F8;
+    //   background-color: #E2E4FC;
+    // }
   }
 }

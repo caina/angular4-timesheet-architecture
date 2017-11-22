@@ -1,16 +1,23 @@
 <div class="time-line-row" [class.active]="used">
-    <span>
-      <label for="timeStart"><i class="fa fa-flag" aria-hidden="true"></i></label>
-      <input type="text" placeholder="00:00" id="timeStart" [(ngModel)]="timeLine.dtInicio">
-    </span>
 
-    <span>
-      <label for="timeEnd"><i class="fa fa-flag-checkered" aria-hidden="true"></i></label>
-      <input type="text" placeholder="00:00" id="timeEnd" [(ngModel)]="timeLine.dtFim">
-    </span>
+  <app-time-input
+    placeholder="00:00"
+    id="timeStart"
+    [initialValue]="timeLine.dtInicio"
+    (timeValue)="timeLine.dtInicio = $event">
+      <i class="fa fa-flag" aria-hidden="true"></i>
+  </app-time-input>
+
+  <app-time-input
+    placeholder="00:00"
+    id="timeEnd"
+    [initialValue]="timeLine.dtFim"
+    (timeValue)="timeLine.dtFim = $event">
+      <i class="fa fa-flag-checkered" aria-hidden="true"></i>
+  </app-time-input>
 
     <app-button (onClick)="handleConfirmationButton()" *ngIf="!showTotal"><i class="fa fa-rocket" aria-hidden="true"></i> Ok</app-button>
     <span *ngIf="showTotal">
-      Total of: {{timeLine.total}}H
+      {{timeLine.total}}H
     </span>
   </div>
