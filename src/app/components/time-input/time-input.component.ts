@@ -17,9 +17,9 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 })
 export class TimeInputComponent {
 
-  @Input() public id: string;
-  @Input() public placeholder: string;
+  @Input() id: string;
   @Input() initialValue:string;
+  @Input() placeholder: string = "00:00";
   @Output() timeValue: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
