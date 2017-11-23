@@ -8,3 +8,7 @@ export interface TimeState {
 export interface State extends fromRoot.State {
   'time': TimeState;
 }
+
+export const reducers = {
+
+}
